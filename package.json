@@ -1,0 +1,39 @@
+{
+    "name": "mtbw-bundle-builder",
+    "version": "1.0.0",
+    "description": "Eclipse with Modeling Tools 4 BW/4HANA bundle builder for SAP BW/4HANA developers.",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run clean && npm run prepare && npm run download && npm run unzip && npm run shell && npm run zip && npm run cleanup",
+        "clean": "npx grunt clean",
+        "prepare": "npx grunt 2",
+        "download": "npx grunt 3",
+        "unzip": "npx grunt 4",
+        "shell": "build\\eclipse\\eclipsec.exe -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2026-03,https://tools.hana.ondemand.com/2026-03 -installIU com.sap.bw.feature.bpcplanning.devedition.feature.group,com.sap.bw.feature.cloud.devedition.feature.group,com.sap.bw.feature.workbench.devedition.feature.group,com.sap.bw.feature.query.devedition.feature.group,com.sap.bw.feature.utilities.devedition.feature.group -tag AddMTBW -destination .\\build\\eclipse -profile epp.package.jee",
+        "zip": "npx grunt 5",
+        "cleanup": "npx grunt 6"
+    },
+    "keywords": [
+        "MTBW",
+        "Modeling Tools 4 BW/4HANA",
+        "Eclipse",
+        "Bundle",
+        "SAP",
+        "BW/4HANA"
+    ],
+    "author": "Tobias Hofmann",
+    "license": "Apache-2.0",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "grunt": "^1.6.1",
+        "grunt-cli": "^1.5.0",
+        "grunt-contrib-clean": "^2.0.1",
+        "grunt-downloadfile": "^2.1.1",
+        "grunt-exec": "^3.0.0",
+        "grunt-mkdir": "^1.1.0",
+        "grunt-zip": "^1.0.0"
+    }
+}
+
+
