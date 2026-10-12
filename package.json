@@ -1,6 +1,6 @@
 {
     "name": "mtbw-bundle-builder",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Eclipse with Modeling Tools 4 BW/4HANA bundle builder for SAP BW/4HANA developers.",
     "main": "index.js",
     "scripts": {
@@ -9,7 +9,7 @@
         "prepare": "npx grunt 2",
         "download": "npx grunt 3",
         "unzip": "npx grunt 4",
-        "shell": "build\\eclipse\\eclipsec.exe -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2026-03,https://tools.hana.ondemand.com/2026-03 -installIU com.sap.bw.feature.bpcplanning.devedition.feature.group,com.sap.bw.feature.cloud.devedition.feature.group,com.sap.bw.feature.workbench.devedition.feature.group,com.sap.bw.feature.query.devedition.feature.group,com.sap.bw.feature.utilities.devedition.feature.group -tag AddMTBW -destination .\\build\\eclipse -profile epp.package.jee",
+        "shell": "build\\eclipse\\eclipsec.exe -application org.eclipse.equinox.p2.director -repository https://download.eclipse.org/releases/2026-09,https://tools.hana.ondemand.com/latest -installIU com.sap.bw.feature.bpcplanning.devedition.feature.group,com.sap.bw.feature.cloud.devedition.feature.group,com.sap.bw.feature.workbench.devedition.feature.group,com.sap.bw.feature.query.devedition.feature.group,com.sap.bw.feature.utilities.devedition.feature.group -tag AddMTBW -destination .\\build\\eclipse -profile SDKProfile",
         "zip": "npx grunt 5",
         "cleanup": "npx grunt 6"
     },
